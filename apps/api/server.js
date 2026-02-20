@@ -1,11 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 
-
 const app = express();
-app.use(cors({ origin: true }));
+app.use(cors({ origin: true })); // dev-friendly
 app.use(express.json({ limit: "1mb" }));
 
+// POST /chat
 app.post("/chat", async (req, res) => {
   try {
     const { message, model } = req.body || {};
@@ -43,3 +43,9 @@ app.post("/chat", async (req, res) => {
   }
 });
 
+app.get("/health", (req, res) => res.json({ ok: true }));
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`API listening on http://localhost:${PORT}`);
+});

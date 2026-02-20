@@ -1,0 +1,12 @@
+.wrap { max-width: 900px; margin: 24px auto; padding: 0 16px; font-family: Arial, sans-serif; }
+.row { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; }
+.row input { flex: 1; padding: 8px; }
+.chat { border: 1px solid #ddd; border-radius: 8px; padding: 12px; min-height: 320px; background: #fafafa; }
+.msg { padding: 10px; border-radius: 8px; margin: 8px 0; background: white; border: 1px solid #eee; }
+.msg.user { border-left: 4px solid #222; }
+.msg.assistant { border-left: 4px solid #666; }
+.role { font-size: 12px; text-transform: uppercase; opacity: 0.6; margin-bottom: 6px; }
+.text { white-space: pre-wrap; }
+.composer { display: flex; gap: 8px; margin-top: 12px; }
+.composer input { flex: 1; padding: 10px; }
+.composer button { padding: 10px 14px; }

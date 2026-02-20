@@ -1,0 +1,29 @@
+<div class="wrap">
+  <h1>Voice Safety Agent (Milestone 1)</h1>
+
+  <div class="row">
+    <label>Model</label>
+    <input [(ngModel)]="model" placeholder="llama3.1:8b" />
+  </div>
+
+  <div class="chat">
+    <div *ngFor="let m of messages" class="msg" [class.user]="m.role==='user'" [class.assistant]="m.role==='assistant'">
+      <div class="role">{{ m.role }}</div>
+      <div class="text">{{ m.text }}</div>
+    </div>
+
+    <div *ngIf="loading" class="msg assistant">
+      <div class="role">assistant</div>
+      <div class="text">Thinking...</div>
+    </div>
+  </div>
+
+  <div class="composer">
+    <input
+      [(ngModel)]="input"
+      (keydown.enter)="send()"
+      placeholder="Type a question..."
+    />
+    <button (click)="send()" [disabled]="loading">Send</button>
+  </div>
+</div>
